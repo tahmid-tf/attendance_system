@@ -14,4 +14,10 @@ class TestModelController extends Controller
         ]);
         return "Data Created";
     }
+
+
+    public function dashboard()
+    {
+        return view("admin.admin-panel.blank");
+    }
 }

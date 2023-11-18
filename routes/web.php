@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/test', [\App\Http\Controllers\TestModelController::class, 'dashboard']);
+
+
+Route::middleware('auth')->prefix('admin')->group(function (){
+
+    // ------------------------------- Devices ------------------------------------------
+
+    Route::resource('device', \App\Http\Controllers\DeviceController::class);
+
+    // ------------------------------- Devices ------------------------------------------
+});
+
+
+

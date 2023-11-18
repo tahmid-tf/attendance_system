@@ -25,3 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("test/{id}", [\App\Http\Controllers\TestModelController::class,'test']);
 
 // ----------------------------------------- Test Route -----------------------------------------
+
+

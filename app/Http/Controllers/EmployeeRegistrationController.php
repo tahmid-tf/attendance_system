@@ -37,6 +37,7 @@ class EmployeeRegistrationController extends Controller
 
         $employee_token_id = $request->get('employee_token_id');
         $device_id = $request->get('device_id');
+        $APP_KEY = $request->get('APP_KEY');
 
 
 //  ---------------------------- Validation Checking ----------------------------
@@ -48,7 +49,7 @@ class EmployeeRegistrationController extends Controller
                 'message' => 'employee_token_id should be an integer.'
             ];
 
-            return response()->json($response, 400);
+            return response()->json($response, 200);
         }
 
 
@@ -214,9 +215,20 @@ class EmployeeRegistrationController extends Controller
 
     public function attendance(Request $request)
     {
+
+
         $employee_token_id = $request->get('employee_token_id');
         $device_id = $request->get('device_id');
+        $APP_KEY = $request->get('APP_KEY');
 
+        if (config('app.key') != $APP_KEY) {
+            $response = [
+                'success' => false,
+                'message' => 'Invalid App Key'
+            ];
+
+            return response()->json($response, 200);
+        }
 
 //  ---------------------------- Validation Checking ----------------------------
 

@@ -15,7 +15,7 @@
     <div id="attendance" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Device Components:</h6>
-            <a class="collapse-item" href="">View Data</a>
+            <a class="collapse-item" href="{{ route('attendance.index') }}">View Data</a>
         </div>
     </div>
 </li>

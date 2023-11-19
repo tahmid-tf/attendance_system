@@ -19,12 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-// ----------------------------------------- Test Route -----------------------------------------
+// ----------------------------------------- Mode output -----------------------------------------
 
 
-//Route::get("test/{id}", [\App\Http\Controllers\TestModelController::class,'test']);
+Route::get("device_mode_check", [\App\Http\Controllers\EmployeeRegistrationController::class,'modeOutput']);
 
-// ----------------------------------------- Test Route -----------------------------------------
+// ----------------------------------------- Mode output -----------------------------------------
 
 
 // ------------------------------- Employee Registration ------------------------------------------

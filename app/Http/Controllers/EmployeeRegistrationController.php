@@ -10,6 +10,29 @@ use App\Models\Device;
 
 class EmployeeRegistrationController extends Controller
 {
+
+
+    public function modeOutput(Request $request)
+    {
+
+
+        $device = Device::where('device_token', request('device_id'))->first();
+
+        if (!$device) {
+            $response = [
+                'success' => false,
+                'message' => 'Device not found.'
+            ];
+
+            return response()->json($response, 200); // Adjust the status code as needed
+        }
+
+        return response()->json([
+            'mode' => $device->device_status
+        ], 200); // Adjust the status code as needed
+
+    }
+
     public function employee_registration(Request $request)
     {
 

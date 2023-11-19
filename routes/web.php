@@ -44,6 +44,17 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
     // ------------------------------- Employee info update ------------------------------------------
 
+    // ------------------------------- logout ------------------------------------------
+
+    Route::get('log_out', function (){
+        \auth()->logout();
+        return redirect()->route("login");
+    })->name('log_out');
+
+    // ------------------------------- logout ------------------------------------------
+
+
+
 });
 
 

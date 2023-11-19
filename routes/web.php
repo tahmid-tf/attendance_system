@@ -26,17 +26,6 @@ Route::get('/test', [\App\Http\Controllers\TestModelController::class, 'dashboar
 
 Route::middleware('auth')->prefix('admin')->group(function (){
 
-    // ------------------------------- Devices ------------------------------------------
-
-    Route::resource('device', \App\Http\Controllers\DeviceController::class);
-
-    // ------------------------------- Devices ------------------------------------------
-
-    // ------------------------------- Employee info update ------------------------------------------
-
-    Route::resource('employee', \App\Http\Controllers\EmployeeWebController::class);
-
-    // ------------------------------- Employee info update ------------------------------------------
 
     // ------------------------------- Employee info update ------------------------------------------
 
@@ -56,6 +45,23 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
 
 });
+
+
+Route::middleware(['auth','a'])->prefix('admin')->group(function (){
+    // ------------------------------- Devices ------------------------------------------
+
+    Route::resource('device', \App\Http\Controllers\DeviceController::class);
+
+// ------------------------------- Devices ------------------------------------------
+
+// ------------------------------- Employee info update ------------------------------------------
+
+    Route::resource('employee', \App\Http\Controllers\EmployeeWebController::class);
+
+// ------------------------------- Employee info update ------------------------------------------
+});
+
+
 
 
 

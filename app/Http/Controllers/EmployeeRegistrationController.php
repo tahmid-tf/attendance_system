@@ -11,7 +11,6 @@ use App\Models\Device;
 class EmployeeRegistrationController extends Controller
 {
 
-
     public function modeOutput(Request $request)
     {
 
@@ -299,6 +298,11 @@ class EmployeeRegistrationController extends Controller
             // Record already exists, update 'leave_time'
             $existingAttendance->leave_time = Carbon::now()->format('h:i:s A');
             $existingAttendance->save();
+
+            return response()->json([
+                'message' => 'User logged out'
+            ], 200); // Adjust the status code as needed
+
         } else {
             // Record does not exist, create a new one
             $employee = Employee::where('employee_token_id', $employee_token_id)->first();
@@ -313,6 +317,12 @@ class EmployeeRegistrationController extends Controller
                 'month' => Carbon::now()->format('m'),
                 'year' => Carbon::now()->format('Y'),
             ]);
+
+            return response()->json([
+                'message' => 'User logged in'
+            ], 200); // Adjust the status code as needed
+
+
         }
 
 

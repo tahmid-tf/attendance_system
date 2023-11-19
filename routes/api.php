@@ -22,8 +22,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // ----------------------------------------- Test Route -----------------------------------------
 
 
-Route::get("test/{id}", [\App\Http\Controllers\TestModelController::class,'test']);
+//Route::get("test/{id}", [\App\Http\Controllers\TestModelController::class,'test']);
 
 // ----------------------------------------- Test Route -----------------------------------------
 
 
+// ------------------------------- Employee Registration ------------------------------------------
+
+Route::get('employee-registration', [\App\Http\Controllers\EmployeeRegistrationController::class,'employee_registration']);
+
+// ------------------------------- Employee Registration ------------------------------------------
+
+// ------------------------------- Employee Registration ------------------------------------------
+
+Route::get('employee-removal', [\App\Http\Controllers\EmployeeRegistrationController::class,'employee_removal']);
+
+// ------------------------------- Employee Registration ------------------------------------------

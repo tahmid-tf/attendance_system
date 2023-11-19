@@ -10,8 +10,7 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Device Components:</h6>
-            <a class="collapse-item" href="#">Create Data</a>
-            <a class="collapse-item" href="#">View Data</a>
+            <a class="collapse-item" href="{{ route('device.create') }}">Create Data</a>
         </div>
     </div>
 </li>

@@ -18,6 +18,7 @@ class CreateEmployeesTable extends Migration
             $table->string('name')->nullable();
             $table->string('designation')->nullable();
             $table->string('status')->nullable();
+            $table->integer('employee_token_id')->nullable();
             $table->string('device_id')->nullable();
             $table->timestamps();
         });

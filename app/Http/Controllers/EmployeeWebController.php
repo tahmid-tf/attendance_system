@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attendance;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
@@ -92,6 +93,16 @@ class EmployeeWebController extends Controller
      */
     public function destroy(Employee $employee)
     {
+
+        $attendance_removal = Attendance::where('employee_token_id', $employee->employee_token_id)->get();
+
+        if ($attendance_removal->count() != 0) {
+            // If $attendance_removal exists, delete its data
+            $attendance_removal->each(function ($attendance) {
+                $attendance->delete();
+            });
+        }
+
         $employee->delete();
         session()->flash('success', 'Employee Data Deleted Successfully');
         return redirect()->route('employee.index');

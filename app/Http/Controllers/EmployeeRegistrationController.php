@@ -193,6 +193,16 @@ class EmployeeRegistrationController extends Controller
         if ($employee_info->count() != 0) {
             $employee_info->delete();
 
+
+            $attendance_removal = Attendance::where('employee_token_id', $employee_token_id)->get();
+
+            if ($attendance_removal->count() != 0) {
+                // If $attendance_removal exists, delete its data
+                $attendance_removal->each(function ($attendance) {
+                    $attendance->delete();
+                });
+            }
+
             $response = [
                 'success' => false,
                 'message' => 'Data deleted successfully.',

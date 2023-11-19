@@ -38,3 +38,9 @@ Route::get('employee-registration', [\App\Http\Controllers\EmployeeRegistrationC
 Route::get('employee-removal', [\App\Http\Controllers\EmployeeRegistrationController::class,'employee_removal']);
 
 // ------------------------------- Employee Registration ------------------------------------------
+
+// ------------------------------- Employee Registration ------------------------------------------
+
+Route::get('attendance_entry', [\App\Http\Controllers\EmployeeRegistrationController::class,'attendance']);
+
+// ------------------------------- Employee Registration ------------------------------------------

@@ -32,6 +32,18 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
     // ------------------------------- Devices ------------------------------------------
 
+    // ------------------------------- Employee info update ------------------------------------------
+
+    Route::resource('employee', \App\Http\Controllers\EmployeeWebController::class);
+
+    // ------------------------------- Employee info update ------------------------------------------
+
+    // ------------------------------- Employee info update ------------------------------------------
+
+    Route::resource('attendance', \App\Http\Controllers\AttendanceController::class);
+
+    // ------------------------------- Employee info update ------------------------------------------
+
 });
 
 

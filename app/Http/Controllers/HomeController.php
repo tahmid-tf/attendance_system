@@ -19,10 +19,14 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function index()
     {
-        return view('home');
+        if (auth()->user()->role == "a" || auth()->user()->role == "hr"){
+            return redirect()->route("attendance.index");
+        }
+
+        abort(404);
     }
 }

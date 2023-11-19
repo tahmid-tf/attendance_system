@@ -221,7 +221,6 @@ class EmployeeRegistrationController extends Controller
         $device_id = $request->get('device_id');
         $APP_KEY = $request->get('APP_KEY');
 
-        return config('app.key');
 
         if (config('app.key') != $APP_KEY) {
             $response = [

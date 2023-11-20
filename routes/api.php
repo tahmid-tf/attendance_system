@@ -26,6 +26,13 @@ Route::get("device_mode_check", [\App\Http\Controllers\EmployeeRegistrationContr
 
 // ----------------------------------------- Mode output -----------------------------------------
 
+// ----------------------------------------- Mode output -----------------------------------------
+
+
+Route::get("employee_check", [\App\Http\Controllers\TestModelController::class,'employee_check']);
+
+// ----------------------------------------- Mode output -----------------------------------------
+
 
 // ------------------------------- Employee Registration ------------------------------------------
 
@@ -33,14 +40,14 @@ Route::get('employee-registration', [\App\Http\Controllers\EmployeeRegistrationC
 
 // ------------------------------- Employee Registration ------------------------------------------
 
-// ------------------------------- Employee Registration ------------------------------------------
+// ------------------------------- Employee Removal ------------------------------------------
 
 Route::get('employee-removal', [\App\Http\Controllers\EmployeeRegistrationController::class,'employee_removal']);
 
-// ------------------------------- Employee Registration ------------------------------------------
+// ------------------------------- Employee Removal ------------------------------------------
 
-// ------------------------------- Employee Registration ------------------------------------------
+// ------------------------------- Attendance Entry ------------------------------------------
 
 Route::get('attendance_entry', [\App\Http\Controllers\EmployeeRegistrationController::class,'attendance']);
 
-// ------------------------------- Employee Registration ------------------------------------------
+// ------------------------------- Attendance Entry ------------------------------------------

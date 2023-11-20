@@ -35,37 +35,48 @@ class EmployeeRegistrationController extends Controller
     public function employee_registration(Request $request)
     {
 
-        $employee_token_id = $request->get('employee_token_id');
+//        $employee_token_id = $request->get('employee_token_id');
         $device_id = $request->get('device_id');
         $APP_KEY = $request->get('APP_KEY');
 
 
 //  ---------------------------- Validation Checking ----------------------------
 
-        // Check if $employee_token_id is not an integer
-        if (!is_numeric($employee_token_id) || !is_int($employee_token_id + 0)) {
-            $response = [
-                'success' => false,
-                'message' => 'employee_token_id should be an integer.'
-            ];
-
-            return response()->json($response, 200);
-        }
-
-
-        if (empty($employee_token_id) || empty($device_id)) {
-            $response = [
-                'success' => false,
-                'message' => 'Both employee_token_id and device_id are required.'
-            ];
-            return response()->json($response, 200);
-        }
+//        // Check if $employee_token_id is not an integer
+//        if (!is_numeric($employee_token_id) || !is_int($employee_token_id + 0)) {
+//            $response = [
+//                'success' => false,
+//                'message' => 'employee_token_id should be an integer.'
+//            ];
+//
+//            return response()->json($response, 200);
+//        }
+//
+//
+//        if (empty($employee_token_id) || empty($device_id)) {
+//            $response = [
+//                'success' => false,
+//                'message' => 'Both employee_token_id and device_id are required.'
+//            ];
+//            return response()->json($response, 200);
+//        }
 
 //  ---------------------------- Validation Checking ----------------------------
 
 
         // Typecast $employee_token_id to an integer
-        $employee_token_id = (int)$employee_token_id;
+
+
+        $id = 0;
+
+        if (Employee::orderBy('id', 'desc')->count() == 0) {
+            $id = 1;
+        } else if (!Employee::orderBy('id', 'desc')->count() == 0) {
+            $id = Employee::orderBy('id', 'desc')->first()->id + 1;
+        }
+
+
+        $employee_token_id = $id;
 
 
 //  ---------------------------- Device Checking ----------------------------

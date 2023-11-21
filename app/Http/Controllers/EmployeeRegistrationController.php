@@ -335,7 +335,7 @@ class EmployeeRegistrationController extends Controller
 
             return response()->json([
                 'message' => 'User logged out',
-                'employee_info' => $employee_info->first()->employee_name ?? 'Set info from dashboard'
+                'employee_info' => $employee_info->first()->name ?? 'Set info from dashboard'
             ], 200); // Adjust the status code as needed
 
         } else {
@@ -355,7 +355,7 @@ class EmployeeRegistrationController extends Controller
 
             return response()->json([
                 'message' => 'User logged in',
-                'employee_info' => $employee_info->first()->employee_name ?? 'Set info from dashboard'
+                'employee_info' => $employee_info->first()->name ?? 'Set info from dashboard'
             ], 200); // Adjust the status code as needed
 
 

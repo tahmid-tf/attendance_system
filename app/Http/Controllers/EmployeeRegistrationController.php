@@ -306,10 +306,10 @@ class EmployeeRegistrationController extends Controller
 
         //  ---------------------------- Employee Checking ----------------------------
 
-        $employee_info = Employee::where('employee_token_id', $employee_token_id)->where('device_id', $device->id)->count();
+        $employee_info = Employee::where('employee_token_id', $employee_token_id)->where('device_id', $device->id);
 
 
-        if ($employee_info == 0) {
+        if ($employee_info->count() == 0) {
             $response = [
                 'success' => false,
                 'message' => 'Employee ID with device does not exists'
@@ -334,7 +334,8 @@ class EmployeeRegistrationController extends Controller
             $existingAttendance->save();
 
             return response()->json([
-                'message' => 'User logged out'
+                'message' => 'User logged out',
+                'employee_info' => $employee_info->name ?? 'Set info from dashboard'
             ], 200); // Adjust the status code as needed
 
         } else {
@@ -353,7 +354,8 @@ class EmployeeRegistrationController extends Controller
             ]);
 
             return response()->json([
-                'message' => 'User logged in'
+                'message' => 'User logged in',
+                'employee_info' => $employee_info->name ?? 'Set info from dashboard'
             ], 200); // Adjust the status code as needed
 
 

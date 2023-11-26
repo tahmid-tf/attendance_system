@@ -19,6 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+
+Route::middleware('api.browser')->group(function(){
+    
 // ----------------------------------------- Mode output -----------------------------------------
 
 
@@ -51,3 +54,7 @@ Route::get('employee-removal', [\App\Http\Controllers\EmployeeRegistrationContro
 Route::get('attendance_entry', [\App\Http\Controllers\EmployeeRegistrationController::class,'attendance']);
 
 // ------------------------------- Attendance Entry ------------------------------------------
+
+
+});
+

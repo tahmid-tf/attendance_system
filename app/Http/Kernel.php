@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'hr' => HrMiddleware::class,
         'a' => AdminMiddleware::class,
+        'api.browser' => \App\Http\Middleware\ApiBrowserCheck::class,
     ];
 }

@@ -20,7 +20,7 @@ Route::get('/', function () {
     return redirect()->route('attendance.index');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/test', [\App\Http\Controllers\TestModelController::class, 'dashboard']);

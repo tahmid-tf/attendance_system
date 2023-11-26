@@ -20,8 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::middleware('api.browser')->group(function(){
-    
+// Route::middleware('api.browser')->group(function(){
+
 // ----------------------------------------- Mode output -----------------------------------------
 
 
@@ -56,5 +56,5 @@ Route::get('attendance_entry', [\App\Http\Controllers\EmployeeRegistrationContro
 // ------------------------------- Attendance Entry ------------------------------------------
 
 
-});
+// });
 

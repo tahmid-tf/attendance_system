@@ -16,29 +16,24 @@ class ApiBrowserCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        $userAgent = $request->header('User-Agent');
-
-        if ($this->isWebBrowser($userAgent)) {
-            return response()->json(['error' => 'Forbidden Request'], 403);
+        // Check if the request is coming from a valid device
+        if (!$this->isValidDevice($request)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
         }
 
         return $next($request);
     }
 
-    private function isWebBrowser($userAgent)
+    private function isValidDevice($request)
     {
-        $browserPatterns = [
-            '/(Mozilla|AppleWebKit|Chrome|Safari|Firefox|Edge|IE|Opera)/i', // Common browser identifiers
-            '/(Windows NT|Macintosh|Linux|X11)/i', // Common operating systems
-        ];
+        // Check for a custom header (e.g., 'X-Device-Identifier')
+        $deviceIdentifier = $request->header('X-Device-Identifier');
 
-        // Check if any of the patterns match the User-Agent header
-        foreach ($browserPatterns as $pattern) {
-            if (preg_match($pattern, $userAgent)) {
-                return true; // It's a web browser
-            }
-        }
+        // Implement your logic to validate the device identifier
+        // For example, you might compare it with a list of allowed device identifiers
 
-        return false; // It's not a web browser
+        $allowedDevices = ['arduino_uno']; // Replace this array with your valid device identifiers
+
+        return in_array($deviceIdentifier, $allowedDevices);
     }
 }

@@ -7,7 +7,15 @@
     @endif
 
 
-    <h4>View Attendance List</h4>
+    <div class="d-flex flex-wrap justify-content-between">
+        <div>
+            <h4>View Attendance List</h4>
+        </div>
+        <div>
+            <a href="{{ route('attendance-report') }}" class="btn btn-primary">Attendance Report</a>
+        </div>
+    </div>
+
     <hr>
 
     <table id="example" class="display" style="width:100%">
@@ -17,6 +25,7 @@
             <th>Name</th>
             <th>Arrival Time</th>
             <th>Leave Time</th>
+            <th>Employee ID</th>
             <th>Date</th>
         </tr>
         </thead>
@@ -29,6 +38,7 @@
                 <td>{{ $em->employee_name }}</td>
                 <td>{{ $em->arrival_time }}</td>
                 <td>{{ $em->leave_time }}</td>
+                <td>{{ $em->employee_token_id }}</td>
                 <td>{{ $em->created_at->format('d/m/Y') }}</td>
             </tr>
         @endforeach

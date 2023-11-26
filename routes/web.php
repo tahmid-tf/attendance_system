@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\AttendanceExportController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +28,13 @@ Route::get('/test', [\App\Http\Controllers\TestModelController::class, 'dashboar
 
 Route::middleware('auth')->prefix('admin')->group(function (){
 
+
+    // ------------------------------- Attendance ------------------------------------------
+
+
+    Route::get('attendance_report', [AttendanceExportController::class,'export'])->name('attendance-report');
+
+    // ------------------------------- Attendance ------------------------------------------
 
     // ------------------------------- Employee info update ------------------------------------------
 

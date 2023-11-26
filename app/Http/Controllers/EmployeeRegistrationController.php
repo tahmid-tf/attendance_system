@@ -329,7 +329,31 @@ class EmployeeRegistrationController extends Controller
             ->first();
 
         if ($existingAttendance) {
-            // Record already exists, update 'leave_time'
+
+
+//            ----------------------------- Previous Structure -----------------------------
+
+//            $existingAttendance->leave_time = Carbon::now()->format('h:i:s A');
+//            $existingAttendance->save();
+//
+//            return response()->json([
+//                'message' => 'User logged out',
+//                'employee_info' => $employee_info->first()->name ?? 'Set info from dashboard'
+//            ], 200); // Adjust the status code as needed
+
+//            ----------------------------- Previous Structure -----------------------------
+
+//            ----------------------------- New Structure 26-11-23 -----------------------------
+
+            // Check if leave_time already exists
+            if ($existingAttendance->leave_time) {
+                return response()->json([
+                    'message' => 'User already logged out',
+                    'employee_info' => $employee_info->first()->name ?? 'Set info from dashboard'
+                ], 200); // Adjust the status code as needed
+            }
+
+            // Record exists, update 'leave_time'
             $existingAttendance->leave_time = Carbon::now()->format('h:i:s A');
             $existingAttendance->save();
 
@@ -337,6 +361,9 @@ class EmployeeRegistrationController extends Controller
                 'message' => 'User logged out',
                 'employee_info' => $employee_info->first()->name ?? 'Set info from dashboard'
             ], 200); // Adjust the status code as needed
+
+//            ----------------------------- New Structure 26-11-23 -----------------------------
+
 
         } else {
             // Record does not exist, create a new one

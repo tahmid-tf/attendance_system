@@ -12,7 +12,7 @@
             <h4>View Attendance List</h4>
         </div>
         <div>
-            <a href="{{ route('attendance-report') }}" class="btn btn-primary">Attendance Report</a>
+            <a href="{{ route('attendance-report') }}" class="btn btn-primary">Attendance Report Export</a>
         </div>
     </div>
 

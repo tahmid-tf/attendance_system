@@ -31,8 +31,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
     // ------------------------------- Attendance ------------------------------------------
 
-
-    Route::get('attendance_report', [AttendanceExportController::class,'export'])->name('attendance-report');
+    Route::get('attendance_report', [AttendanceExportController::class,'export_data'])->name('attendance-report');
 
     // ------------------------------- Attendance ------------------------------------------
 

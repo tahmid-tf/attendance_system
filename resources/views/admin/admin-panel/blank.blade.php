@@ -75,6 +75,9 @@
     </ul>
     <!-- End of Sidebar -->
 
+
+
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -198,6 +201,34 @@
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+
+
+{{-- ------------------------------------- Mobile screen in always toggle mode ------------------------------------- --}}
+
+<script>
+    $(document).ready(function () {
+        // Function to add or remove a class based on screen size
+        function toggleSidebarClass() {
+            var sidebar = $("#accordionSidebar");
+
+            if (window.innerWidth <= 767) {
+                sidebar.addClass("toggled");
+            } else {
+                sidebar.removeClass("toggled");
+            }
+        }
+
+        // Initial call to set the class on page load
+        toggleSidebarClass();
+
+        // Event listener for window resize
+        $(window).resize(function () {
+            toggleSidebarClass();
+        });
+    });
+</script>
+
+{{-- ------------------------------------- Mobile screen in always toggle mode ------------------------------------- --}}
 
 
 <script>

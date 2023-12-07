@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('nightly:export')->dailyAt('1:51');
+//        $schedule->command('nightly:export')->dailyAt('1:51');
 //        $schedule->command('nightly:export')->dailyAt('22:00');
     }
 

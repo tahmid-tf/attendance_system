@@ -21,4 +21,4 @@ An employee registers attendance through the fingerprint authentication system.
 
 Attendance Report
 
-<img src="/public/img/w1.jpg" alt="Build Status">
+<img src="/public/img/w1.jpg" alt="Build Status" width="415px">

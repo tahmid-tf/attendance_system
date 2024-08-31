@@ -13,8 +13,8 @@ This corporate fingerprint-based attendance system is designed to efficiently re
 
 ## Snapsohts
 
-<img src="https://photos.google.com/photo/AF1QipPCU9Mnh_zxUnoNZNL8qkB32AO5fCXKR65UZ2Si" alt="Build Status">
+<img src="https://photos.app.goo.gl/sTV4PwcE4GJzipVb7" alt="Build Status">
 
 ##
 
-<img src="https://photos.google.com/photo/AF1QipPlXmYQSWfsKy9liASbZiA3QihjELIDrw5Q4id2" alt="Build Status">
+<img src="https://photos.app.goo.gl/NTqtNgLBoB2Ykz3s9" alt="Build Status">

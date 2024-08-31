@@ -13,8 +13,12 @@ This corporate fingerprint-based attendance system is designed to efficiently re
 
 ## Snapsohts
 
+An employee registers attendance through the fingerprint authentication system.
+
 <img src="/public/img/attendance.PNG" alt="Build Status">
 
 ##
+
+Attendance Report
 
 <img src="/public/img/w1.jpg" alt="Build Status">

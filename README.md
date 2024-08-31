@@ -12,13 +12,11 @@
 This corporate fingerprint-based attendance system is designed to efficiently record employee start and end times using biometric authentication. It features an advanced attendance export system and offers the capability to view attendance records remotely via web or IP address, enabling seamless online access and management.
 
 ## Snapsohts
-
-An employee registers attendance through the fingerprint authentication system.
+Attendance Report
 
 <img src="/public/img/attendance.PNG" alt="Build Status">
 
 ##
-
-Attendance Report
+An employee registers attendance through the fingerprint authentication system.
 
 <img src="/public/img/w1.jpg" alt="Build Status" width="415px">
